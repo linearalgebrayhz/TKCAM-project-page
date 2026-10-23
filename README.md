@@ -2,7 +2,7 @@
 
 Project page for **TKCAM: Text and Keyframe to Camera Trajectory Generation**.
 
-Paper: [arXiv:2610.11105](https://arxiv.org/abs/2610.11105) · Code: [TKCAM](https://github.com/linearalgebrayhz/TKCAM)
+Paper: [arXiv:2610.11105](https://arxiv.org/abs/2610.11105) · Code: [TKCAM](https://github.com/linearalgebrayhz/TKCAM) · Dataset: [RealEstate10K-Cap](https://huggingface.co/datasets/yhz-linearalgebra/RealEstate10K-Cap)
 
 The live page is published at [linearalgebrayhz.github.io/projects/TKCAM/](https://linearalgebrayhz.github.io/projects/TKCAM/). This repository contains the source page. A copy of the page lives at projects/TKCAM/ in the [personal website repository](https://github.com/linearalgebrayhz/linearalgebrayhz.github.io) so GitHub Pages can serve the requested URL.
 
