@@ -11,10 +11,23 @@ The live page is published at [linearalgebrayhz.github.io/projects/TKCAM/](https
 - index.html: page content and citation metadata
 - static/css/tkcam.css: page styling
 - static/js/tkcam.js: BibTeX copy button
+- static/js/showcase.js: synchronized camera-path canvas and DaS video playback
+- static/data/showcase.json: 49 camera poses for each of the two demo scenes
+- static/videos/: TKCAM-guided DaS renders for 000952 and 000596
 - static/images/paper/: figures rendered from the preprint
 - static/pdfs/TKCAM_preprint.pdf: archived local snapshot; the page's Paper link points to the canonical arXiv version
 
 The page works as a static site. To preview it locally, serve this directory with any HTTP server. Internal asset paths are relative, so the same files work at the repository root or under /projects/TKCAM/.
+
+## Motion showcase data
+
+The demo prompts come from each sample's `sample.json`; the videos are the corresponding `tkcam.mp4` DaS outputs. The available trajectory files are 49-frame DaS world-to-camera matrices, rather than the original 12D TKCAM arrays. `tools/export_showcase.py` inverts those matrices and the recorded `diag(1,-1,-1)` basis conversion to recover OpenGL camera-to-world poses relative to frame 0. It reconstructs and integrates per-frame velocity as a numerical consistency check, then exports positions and the first two rotation columns. The page derives the camera's forward axis as the negative cross product of those columns.
+
+Regenerate the small JSON asset with NumPy installed:
+
+```bash
+python tools/export_showcase.py --samples /path/to/das_package/samples
+```
 
 ## Publishing
 
